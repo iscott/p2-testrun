@@ -29,6 +29,11 @@ app.use("/fruits", fruitsController);
 const vegetablesController = require("./controllers/vegetables.js");
 app.use("/vegetables", vegetablesController);
 
+// Default route:
+app.get("/", (req, res) => {
+  res.redirect("/fruits");
+});
+
 // listen
 app.listen(PORT, () => {
   console.log("listening on: " + PORT);
